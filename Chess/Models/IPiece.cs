@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chess.App_Start
+namespace Chess.Models
 {
     interface IPiece
     {

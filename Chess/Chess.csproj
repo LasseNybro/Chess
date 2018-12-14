@@ -124,6 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Models\Move.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Knight.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Models\IPiece.cs" />

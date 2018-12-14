@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Chess.App_Start
+namespace Chess.Models
 {
     public class Knight : IPiece
     {
@@ -22,9 +22,9 @@ namespace Chess.App_Start
             char endX = move[2];
             char endY = move[3];
 
-            if (startX == this.X && startY == this.Y)//Choosing the tile of the Piece
+            if (X== (Game.Horz)startX && Y==startY) //Choosing the tile of the Piece, skal flyttes ud i Move
             {
-                return string.Concat("K", move);
+                return string.Concat("N", move);
             }
             else { throw new Exception("You have not chosen this piece"); }
         }
