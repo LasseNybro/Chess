@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Chess.Models
 {
-    public class Knight : IPiece
+    public class Knight 
     {
-        public Game.Horz X { get; set; }
+        /*public Game.Horz X { get; set; }
         public int Y { get; set; }
         public string Color { get; set; }
         public int ID { get; set; }
@@ -27,6 +27,6 @@ namespace Chess.Models
                 return string.Concat("N", move);
             }
             else { throw new Exception("You have not chosen this piece"); }
-        }
+        }*/
     }
 }

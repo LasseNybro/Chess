@@ -39,7 +39,7 @@ namespace Chess.Models
             Piece Attacked =
                 (from P in Game.Pieces
                 where X2 == P.X && Y2 == P.Y
-                select P).firstOrDefault;
+                select P).FirstOrDefault();
 
             if (!(X2 < 1 || X2 > 8 || Y2 < 1 || Y2 > 8))
             {

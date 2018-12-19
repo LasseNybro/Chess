@@ -23,6 +23,6 @@ namespace Chess.Models
 
 
 
-        List<Piece> Pieces = new List<Piece>();
+        public static List<Piece> Pieces = new List<Piece>();
     }
 }
