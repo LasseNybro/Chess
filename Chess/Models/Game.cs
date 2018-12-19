@@ -18,7 +18,7 @@ namespace Chess.Models
             GameID = 0; //temp 
             WhiteID = whiteID;
             BlackID = blackID;
-
+            StartTime = DateTime.Now;
         }
 
 
