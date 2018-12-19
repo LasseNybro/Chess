@@ -7,7 +7,22 @@ namespace Chess.Models
 {
     public class Game
     {
-        public enum Horz { A,B,C,D,E,F,G,H};
-        public List<Piece> Pieces = new List<Piece>();
+        public int GameID { get; set; }
+        public int WhiteID { get; set; }
+        public int BlackID { get; set; }
+        public DateTime StartTime { get; set; } 
+        public string LastMove { get; set; }
+
+        public Game(int whiteID, int blackID)
+        {
+            GameID = 0; //temp 
+            WhiteID = whiteID;
+            BlackID = blackID;
+            StartTime = DateTime.Now;
+        }
+
+
+
+        List<Piece> Pieces = new List<Piece>();
     }
 }
