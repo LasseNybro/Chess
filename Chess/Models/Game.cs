@@ -12,6 +12,7 @@ namespace Chess.Models
         public int BlackID { get; set; }
         public DateTime StartTime { get; set; } 
         public string LastMove { get; set; }
+        public string Moves { get; set; }
 
         public Game(int whiteID, int blackID)
         {
@@ -19,10 +20,11 @@ namespace Chess.Models
             WhiteID = whiteID;
             BlackID = blackID;
             StartTime = DateTime.Now;
+            LastMove = 
         }
 
 
 
-        List<Piece> Pieces = new List<Piece>();
+        public static List<Piece> Pieces = new List<Piece>();
     }
 }
