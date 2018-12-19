@@ -58,7 +58,7 @@ namespace Chess.Models
                             }
                             else
                             {
-                                throw new Exception();
+                                throw new Exception("Wrong Move for this Piece, Buster Brown");
                             }
                             break;
                         case Officer.Bishop:
@@ -74,33 +74,11 @@ namespace Chess.Models
                     {
                         Game.Pieces.Remove(Attacked);
                     }
-                /*}
-                    for (int i = 0; i < Length; i++)
-                    {
-                        if (X2 == Pieces[i].X && Y2 == Pieces[i].Y)
-                        {
-                            Remove = Pieces[i].PieceID;
-                        }
-                    }
-                    if (Remove == null)
-                    {
-                        return String.Concat("N", move);
-                    }
-                    else if (Remove != null && Pieces[i].Color != Pieces[PieceID = PieceID].Color)
-                    {
-                        Piece.RemoveMethod(PieceID); //Make a remove method to remove pieces based on their PieceID
-                        return String.Concat("N", move);
-                    }*/
                     throw new Exception();
                 }
-                throw new Exception();
+                throw new Exception("You can't move on top of your own pieces...");
             }
-            throw new Exception();
-        }
-
-        public void Remove(int x, int y)
-        {
-            
+            throw new Exception("You cannot move outside the board...");
         }
     }
 }
