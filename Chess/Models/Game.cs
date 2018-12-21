@@ -10,8 +10,9 @@ namespace Chess.Models
         public int GameID { get; set; }
         public int WhiteID { get; set; }
         public int BlackID { get; set; }
-        public DateTime StartTime { get; set; } 
-        public string LastMove { get; set; }
+        public DateTime StartTime { get; set; }
+        public Move LastMove { get; set; }
+        public List<Move> Log {get; set;}
 
         public Game(int whiteID, int blackID)
         {
@@ -21,7 +22,17 @@ namespace Chess.Models
             StartTime = DateTime.Now;
         }
 
+        public void MakeMove(string move)
+        {
+            Move theMove = new Move(move, DateTime.Now);
+            Move TheMove = Piece.Move(theMove);
 
+            //Render alle brikkerne igennem viewet
+
+            //Nedenstående skal være de sidste linje kode
+            Log.Add(TheMove);
+            LastMove = TheMove;
+        }
 
         public static List<Piece> Pieces = new List<Piece>();
     }

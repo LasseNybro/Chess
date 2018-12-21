@@ -9,7 +9,7 @@ namespace Chess.Models
     public class Piece
     {
         //Custom Enum
-        public enum Officer { Pawn, Rook, Knight, Bishop, Queen, King}
+        public enum Officer { Pawn, Rook, Knight, Bishop, Queen, King }
 
         //Properties
         int X { get; set; }
@@ -29,56 +29,63 @@ namespace Chess.Models
         }
 
         //Methods
-        public virtual string Move(string move)
+        public virtual Move Move(Move theMove)
         {
+            string move = theMove.TheMove;
             int X1 = Convert.ToInt32(move[0]) - Convert.ToInt32('A') + 1;
             int Y1 = move[1];
             int X2 = Convert.ToInt32(move[2]) - Convert.ToInt32('A') + 1;
             int Y2 = move[3];
-            string theMove = "";
+            Piece Moved =
+                (from P in Game.Pieces
+                 where X1 == P.X && Y1 == P.Y// && User.Color == P.Color, til når vi implementerer brugere
+                 select P).FirstOrDefault();
             Piece Attacked =
                 (from P in Game.Pieces
-                where X2 == P.X && Y2 == P.Y
-                select P).FirstOrDefault();
-
-            if (!(X2 < 1 || X2 > 8 || Y2 < 1 || Y2 > 8))
-            {
-                if(Attacked == null || Attacked.Color != this.Color)
+                 where X2 == P.X && Y2 == P.Y
+                 select P).FirstOrDefault();
+            if (Moved != null) {
+                if (!(X2 < 1 || X2 > 8 || Y2 < 1 || Y2 > 8))
                 {
-                    switch (Type)
+                    if (Attacked == null || Attacked.Color != this.Color)
                     {
-                        case Officer.Pawn:
-                            break;
-                        case Officer.Rook:
-                            break;
-                        case Officer.Knight:
-                            if ((X2 - X1) + (Y2 - Y1) == 5)
-                            {
-                                theMove = String.Concat("N", move);
-                            }
-                            else
-                            {
-                                throw new Exception("Wrong Move for this Piece, Buster Brown");
-                            }
-                            break;
-                        case Officer.Bishop:
-                            break;
-                        case Officer.Queen:
-                            break;
-                        case Officer.King:
-                            break;
-                        default:
-                            break;
+                        if (Attacked != null)
+                        {
+                            Game.Pieces.Remove(Attacked);
+                        }
+                        switch (Type)
+                        {
+                            case Officer.Pawn:
+                                break;
+                            case Officer.Rook:
+                                break;
+                            case Officer.Knight:
+                                if ((X2 - X1) + (Y2 - Y1) == 5)
+                                {
+                                    theMove.TheMove = String.Concat("N", move);
+                                    return theMove;
+                                }
+                                else
+                                {
+                                    throw new Exception("Wrong Move for this Piece, Buster Brown");
+                                }
+                            //break;
+                            case Officer.Bishop:
+                                break;
+                            case Officer.Queen:
+                                break;
+                            case Officer.King:
+                                break;
+                            default:
+                                break;
+                        }
+                        throw new Exception();
                     }
-                    if (Attacked != null)
-                    {
-                        Game.Pieces.Remove(Attacked);
-                    }
-                    throw new Exception();
+                    throw new Exception("You can't move on top of your own pieces...");
                 }
-                throw new Exception("You can't move on top of your own pieces...");
+                throw new Exception("You cannot move outside the board...");
             }
-            throw new Exception("You cannot move outside the board...");
+            throw new Exception("Either there is no piece on this tile or the piece is not your color.");
         }
     }
 }
