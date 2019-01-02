@@ -124,13 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\BundleConfig2.cs" />
-    <Compile Include="App_Start\FilterConfig2.cs" />
-    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Models\Move.cs" />
     <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\Knight.cs" />
+    <Compile Include="Models\User0.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Models\Piece.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -149,8 +147,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Black Knight.png" />
-    <Content Include="Images\White Knight.png" />
+    <Content Include="Images\BlackKnight.png" />
+    <Content Include="Images\WhiteKnight.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -182,6 +180,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Game\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

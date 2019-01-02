@@ -22,3 +22,77 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#Y1>td:nth-child(2n+1)
+, #Y2>td:nth-child(2n)
+, #Y3>td:nth-child(2n+1)
+, #Y4>td:nth-child(2n)
+, #Y5>td:nth-child(2n+1)
+, #Y6>td:nth-child(2n)
+, #Y7>td:nth-child(2n+1)
+, #Y8>td:nth-child(2n) {
+    background-color: black;
+    width:7.5vw;
+    height:7.5vw;
+}
+
+#Y1>td:nth-child(2n)
+, #Y2>td:nth-child(2n+1)
+, #Y3>td:nth-child(2n)
+, #Y4>td:nth-child(2n+1)
+, #Y5>td:nth-child(2n)
+, #Y6>td:nth-child(2n+1)
+, #Y7>td:nth-child(2n)
+, #Y8>td:nth-child(2n+1) {
+    background-color: white;
+    width:7.5vw;
+    height:7.5vw;
+}
+
+td>img {
+    position:relative;
+    left:1.6vw;
+    width:auto;
+    height:6vw;
+}
+
+#GameBoard {
+    width:60vw;
+    border: 1px solid black;
+}
+
+div.gameBoard {
+    display:inline-block;
+    position:absolute;
+    left:8vw;
+    top:35vw;
+}
+
+div.chat {
+    display: inline-block;
+    position: absolute;
+    left: 70vw;
+    top: 43vw;
+}
+
+.chat > p {
+    height: 50vw;
+    width: 20vw;
+    border: 1px solid black;
+}
+
+.chat>input{
+    width:20vw;
+}
+
+.chat>button{
+    width:10vw;
+}
+
+.chat>h2{
+    width:20vw;
+}
+
+div.row{
+    height:70vw;
+}
